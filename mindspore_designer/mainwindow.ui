@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>883</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
-       <widget class="QWidget" name="tab">
+       <widget class="QWidget" name="tab1">
         <attribute name="title">
          <string> 设计器</string>
         </attribute>
@@ -64,41 +64,25 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>设计器</string>
-    </property>
-    <addaction name="actionxinjian"/>
-    <addaction name="action_copy"/>
-   </widget>
-   <widget class="QMenu" name="menu_data">
-    <property name="title">
-     <string>数据</string>
-    </property>
-    <addaction name="action_load_data"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>训练</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_data"/>
-   <addaction name="menu_2"/>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
+  <widget class="QToolBar" name="toolBar_designer">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -106,8 +90,84 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_new"/>
+   <addaction name="action_big"/>
   </widget>
-  <action name="actionxinjian">
+  <widget class="QToolBar" name="toolBar_data">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_load_data_2"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>883</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_designer">
+    <property name="title">
+     <string>设计器</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_data">
+    <property name="title">
+     <string>数据</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_train">
+    <property name="title">
+     <string>训练</string>
+    </property>
+   </widget>
+   <addaction name="menu_designer"/>
+   <addaction name="menu_data"/>
+   <addaction name="menu_train"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_train">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>训练</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_start_train"/>
+  </widget>
+  <action name="action_new">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/picture/1.jpg</normaloff>:/picture/1.jpg</iconset>
+   </property>
    <property name="text">
     <string>新建</string>
    </property>
@@ -125,7 +185,42 @@
     <string>选择数据路径</string>
    </property>
   </action>
+  <action name="action_big">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/picture/2.jpg</normaloff>:/picture/2.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="priority">
+    <enum>QAction::NormalPriority</enum>
+   </property>
+  </action>
+  <action name="action_load_data_2">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/picture/3.jpg</normaloff>:/picture/3.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>加载数据</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;训练选项&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="action_start_train">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/picture/6.jpg</normaloff>:/picture/6.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>开始训练</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="picture.qrc"/>
+ </resources>
  <connections/>
 </ui>
